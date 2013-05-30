@@ -1,0 +1,43 @@
+Declare Label choose_number_of_matches
+Declare Buttons one, two, three and reset and add to applet
+	Declare int variable number_of_matches_left and set to 23
+	Display number_of_matches_left 
+
+
+	When user enters number of matches to remove
+		If ((user_choice > 0) and (user_choice < 4))
+			If (remaining_matches >= user_choice)
+				Subtract user_choice from remaining_matches
+			Else
+				Output “insufficient matches, choose again”
+			End If
+		Else
+			Output “choose 1 .. 3 matches”
+		End If
+
+		If (remaining_matches = = 0)
+			Output “You lost, computer wins “ 
+		Else
+			Computer_Go
+		End If
+
+	            // Computers_Go 
+
+		If (remaining_matches > 3)
+			Get random number (1..3)
+			Subtract random number from remaining_matches
+		Else
+			If (remaining_matches = = 3)
+				Subtract 2 from remaining_matches
+			Else
+				Subtract 1 from remaining_matches
+			End If
+		End If
+		
+		If (remaining_matches = = 0)
+			Output “You won, computer loses”
+		End If
+		
+		
+get to 14
+get them to 9
