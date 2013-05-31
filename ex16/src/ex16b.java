@@ -28,7 +28,7 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
 
         colorSelected = 0;
 
-        color = new Color[10];
+        color = new Color[11];
 
         color[0] = new Color(0,0,0);
         color[1] = new Color(255,0,0);
@@ -40,6 +40,7 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
         color[7] = new Color(127, 127, 127);
         color[8] = new Color(64, 64, 64);
         color[9] = new Color(255, 255, 255);
+        color[10] = new Color(221, 221, 221);
 
 
         UI(); // Object UI elements
@@ -118,14 +119,16 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
                 break;
 
             case 2:
-                g.setColor(new Color(255, 255, 255));
-                g.fillRect(30,10,currCanvasX - 40,currCanvasY - 20);
+                //g.setColor(new Color(255, 255, 255));
+                //g.fillRect(30,10,currCanvasX - 40,currCanvasY - 20);
                 g.setColor(color[0]);
                 g.drawRect(14,150,2,100);
                 g.fillRect(10,200,11,4);
-                for(int i = 0; i < 10; i++) {
+                for(int i = 0; i < 11; i++) {
                     g.setColor(color[i]);
                     g.fillRect(10, 10 + (10 * i),10,10);
+                    g.setColor(color[0]);
+                    g.drawRect(10, 10 + (10 * i),10,10);
                 }
                 UIType = 3;
                 break;
@@ -150,7 +153,7 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
         switch (UIType) // swtich for different UITypes
         {
             case 1:
-                g.clearRect(0, 0, currCanvasX, currCanvasY);
+                g.clearRect(0, 0, 20, currCanvasY);
                 break;
 
             case 4:
@@ -212,6 +215,10 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
 
         if(mouseX > 10 && mouseX < 20 && mouseY > 100 && mouseY < 110){
             colorSelected = 9;
+        }
+
+        if(mouseX > 10 && mouseX < 20 && mouseY > 110 && mouseY < 120){
+            colorSelected = 10;
         }
 
         System.out.println("Color:" + colorSelected);
