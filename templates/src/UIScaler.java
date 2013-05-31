@@ -1,5 +1,5 @@
 //Owen Holloway GYC
-//Uses UI scaler template version 1.2
+//Uses UI scaler template version 1.3
 
 import java.applet.Applet;
 import java.awt.*;
@@ -69,6 +69,12 @@ public class UIScaler extends Applet implements ActionListener {
 		break;
 		}
 	}
+
+    public void update(Graphics g) {
+        // This can be changed to use a switch
+        g.clearRect(0,0,currCanvasX,currCanvasY);
+        paint(g);
+    }
 
 	public void removeObjects() {
 		// TODO remove all objects
