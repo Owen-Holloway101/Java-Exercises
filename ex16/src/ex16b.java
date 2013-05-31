@@ -14,13 +14,13 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
     boolean redraw;
 
     Color color[];
-    int colorSelected;
+    int colorSelected,slider = 20;
 
     int mouseX, mouseY;
 
     public void init() {
 
-        UIType = 1;
+        UIType = 2;
         canvasX = getWidth() + 1;
         canvasY = getHeight() + 1;
 
@@ -54,8 +54,8 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
         currCanvasX = getWidth();
         currCanvasY = getHeight();
 
-        if (!(canvasX == currCanvasX) | !(canvasY == currCanvasY)
-                | redraw == true) {
+        if (!(canvasX == currCanvasX) | !(canvasY == currCanvasY) | redraw == true) {
+
             removeObjects();
             UI(); // Object UI elements
 
@@ -80,7 +80,7 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
 
         redraw = true;
 
-        remove(begin);
+        //remove(begin);
 
         repaint();
     }
@@ -97,10 +97,10 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
                 // button.addActionListener(this);
                 // add(button);
 
-                begin = new Button("Begin");
-                begin.setBounds(currCanvasX / 2 - 40, 40, 80, 30);
-                begin.addActionListener(this);
-                add(begin);
+                //begin = new Button("Begin");
+                //begin.setBounds(currCanvasX / 2 - 40, 40, 80, 30);
+                //begin.addActionListener(this);
+                //add(begin);
                 break;
 
             case 2:
@@ -120,7 +120,9 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
             case 2:
                 g.setColor(new Color(255, 255, 255));
                 g.fillRect(30,10,currCanvasX - 40,currCanvasY - 20);
-
+                g.setColor(color[0]);
+                g.drawRect(14,150,2,100);
+                g.fillRect(10,200,11,4);
                 for(int i = 0; i < 10; i++) {
                     g.setColor(color[i]);
                     g.fillRect(10, 10 + (10 * i),10,10);
@@ -130,7 +132,15 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
 
             case 3:
                 g.setColor(color[colorSelected]);
-                g.fillOval(mouseX,mouseY,5,5);
+                g.fillOval(mouseX - (slider/2),mouseY - (slider/2),slider,slider);
+                break;
+            case 4:
+                slider = 50 - ((mouseY - 150) / 2);
+                g.setColor(color[0]);
+                g.drawRect(14,150,2,100);
+                g.fillRect(10,mouseY,11,4);
+                UIType = 3;
+                System.out.println("slider:" + slider);
                 break;
         }
         System.out.println("UIType:" + UIType);
@@ -142,8 +152,9 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
             case 1:
                 g.clearRect(0, 0, currCanvasX, currCanvasY);
                 break;
-            case 2:
 
+            case 4:
+                g.clearRect(10, 150, 11, 120);
                 break;
         }
             paint(g);
@@ -152,7 +163,7 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
     public void removeObjects() {
         // TODO remove all objects
         // eg: remove(objectName);
-        remove(begin);
+        //remove(begin);
     }
 
     public void mouseClicked(MouseEvent e) {
@@ -214,6 +225,13 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
 
         if(mouseX > 30 && mouseX < (currCanvasX - 20) && mouseY > 10 && mouseY < (currCanvasY - 20))
             repaint();
+
+        if(mouseX > 10 && mouseX < 20 && mouseY > 150 && mouseY < 250) {
+            System.out.println("Slider");
+
+            UIType = 4;
+            repaint();
+        }
     }
 
     public void mousePressed(MouseEvent e) {
