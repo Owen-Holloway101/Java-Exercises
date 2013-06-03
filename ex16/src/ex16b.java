@@ -87,7 +87,6 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
     }
 
     public void UI() {
-        // TODO Add object UI elements
 
         switch (UIType) // swtich for different UITypes
         {
@@ -110,7 +109,6 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
     }
 
     public void paintedUI(Graphics g) {
-        // TODO Add any graphics UI elements
 
         switch (UIType) // swtich for different UITypes
         {
@@ -164,9 +162,6 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
     }
 
     public void removeObjects() {
-        // TODO remove all objects
-        // eg: remove(objectName);
-        //remove(begin);
     }
 
     public void mouseClicked(MouseEvent e) {
