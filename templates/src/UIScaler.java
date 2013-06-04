@@ -8,77 +8,78 @@ import java.awt.event.ActionListener;
 
 public class UIScaler extends Applet implements ActionListener {
 
-	int canvasX, canvasY, currCanvasX, currCanvasY;
-	int UIType;
+    //Canvas and UIType setups
+    int canvasX, canvasY, currCanvasX, currCanvasY;
+    int UIType;
 
-	public void init() {
+    public void init() {
 
-		UIType = 1;
-		canvasX = getWidth() + 1;
-		canvasY = getHeight() + 1;
+        UIType = 1;
+        canvasX = getWidth() + 1;
+        canvasY = getHeight() + 1;
 
-		UI(); // Object UI elements
+        UI(); // Object UI elements
 
-		setLayout(null);
-	}
+        setLayout(null);
+    }
 
-	public void paint(Graphics g) {
-		System.out.println("paint");
-		currCanvasX = getWidth();
-		currCanvasY = getHeight();
+    public void paint(Graphics g) {
+        System.out.println("paint");
+        currCanvasX = getWidth();
+        currCanvasY = getHeight();
 
-		if (!(canvasX == currCanvasX) | !(canvasY == currCanvasY)) {
-			removeObjects();
-			UI(); // Object UI elements
+        if (!(canvasX == currCanvasX) | !(canvasY == currCanvasY)) {
+            removeObjects();
+            UI(); // Object UI elements
 
-			canvasX = currCanvasX;
-			canvasY = currCanvasY;
+            canvasX = currCanvasX;
+            canvasY = currCanvasY;
 
-		}
-		paintedUI(g); // Graphics UI elements
-	}
+        }
+        paintedUI(g); // Graphics UI elements
+    }
 
-	public void actionPerformed(ActionEvent e) {
-		// TODO Add Actions for (this)
-	}
+    public void actionPerformed(ActionEvent e) {
+        // TODO Add Actions for (this)
+    }
 
-	public void UI() {
-		// TODO Add object UI elements
-		
-		
-		switch (UIType) //swtich for different UITypes
-		{
-		case 1: 
-			// eg: button = new button("button");
-			// button.setBounds(currCanvasX / 2 - 40, 10, 80, 20);
-			// button.setBackground(Color.green);
-			// button.addActionListener(this);
-			// add(button);
-		break;
-		}
-	}
+    public void UI() {
+        // TODO Add object UI elements
 
-	public void paintedUI(Graphics g) {
-		// TODO Add any graphics UI elements
-		
-		
-		switch (UIType) //swtich for different UITypes
-		{
-		case 1: 
+
+        switch (UIType) //swtich for different UITypes
+        {
+            case 1:
+                // eg: button = new button("button");
+                // button.setBounds(currCanvasX / 2 - 40, 10, 80, 20);
+                // button.setBackground(Color.green);
+                // button.addActionListener(this);
+                // add(button);
+                break;
+        }
+    }
+
+    public void paintedUI(Graphics g) {
+        // TODO Add any graphics UI elements
+
+
+        switch (UIType) //swtich for different UITypes
+        {
+            case 1:
 			// eg: g.drawString("Hello World", currCanvasX/2, 40);
-		break;
-		}
-	}
+                break;
+        }
+    }
 
     public void update(Graphics g) {
         // This can be changed to use a switch
-        g.clearRect(0,0,currCanvasX,currCanvasY);
+        g.clearRect(0, 0, currCanvasX, currCanvasY);
         paint(g);
     }
 
-	public void removeObjects() {
-		// TODO remove all objects
-		// eg: remove(objectName);
-	}
+    public void removeObjects() {
+        // TODO remove all objects
+        // eg: remove(objectName);
+    }
 
 }
