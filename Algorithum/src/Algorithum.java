@@ -12,7 +12,8 @@ public class Algorithum extends Applet implements ActionListener {
     int UIType;
 
     Button choice[], coin[];
-    int costChoice[];
+    int costChoice[], coinVal[];
+    double balance;
     String labelChoice[];
 
     public void init() {
@@ -26,14 +27,31 @@ public class Algorithum extends Applet implements ActionListener {
         labelChoice = new String[6];
         costChoice = new int[6];
 
-        costChoice[0] = 1;
-        costChoice[1] = 1;
-        costChoice[2] = 1;
-        costChoice[3] = 1;
-        costChoice[4] = 1;
-        costChoice[5] = 1;
+        costChoice[0] = 100;
+        costChoice[1] = 100;
+        costChoice[2] = 100;
+        costChoice[3] = 100;
+        costChoice[4] = 100;
+        costChoice[5] = 100;
+
+        labelChoice[0] = "Choice 0";
+        labelChoice[1] = "Choice 1";
+        labelChoice[2] = "Choice 2";
+        labelChoice[3] = "Choice 3";
+        labelChoice[4] = "Choice 4";
+        labelChoice[5] = "Choice 5";
+
 
         coin = new Button[5];
+        coinVal = new int[5];
+
+        coinVal[0] = 10;
+        coinVal[1] = 20;
+        coinVal[2] = 50;
+        coinVal[3] = 100;
+        coinVal[4] = 200;
+
+        balance = 0.00;
 
         UI(); // Object UI elements
 
@@ -58,6 +76,29 @@ public class Algorithum extends Applet implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         // TODO Add Actions for (this)
+        if(e.getSource() == choice[0]){
+             System.out.println("Choice0");
+        }
+
+        if(e.getSource() == choice[1]){
+            System.out.println("Choice1");
+        }
+
+        if(e.getSource() == choice[2]){
+            System.out.println("Choice2");
+        }
+
+        if(e.getSource() == choice[3]){
+            System.out.println("Choice3");
+        }
+
+        if(e.getSource() == choice[4]){
+            System.out.println("Choice4");
+        }
+
+        if(e.getSource() == choice[5]){
+            System.out.println("Choice5");
+        }
     }
 
     public void UI() {
@@ -69,9 +110,10 @@ public class Algorithum extends Applet implements ActionListener {
             case 1:
 
                 for(int i = 0; i < 6; i++) {
-                    choice[i] = new Button();
-                    choice[i].setBackground(Color.blue);
-                    choice[i].setBounds(currCanvasX - 80,170 + (30 * i),60,20);
+                    choice[i] = new Button(labelChoice[i]);
+                    choice[i].setBackground(new Color(81, 180, 255));
+                    choice[i].setBounds(currCanvasX - 100,170 + (30 * i),90,20);
+                    choice[i].addActionListener(this);
                     add(choice[i]);
                 }
 
@@ -89,7 +131,15 @@ public class Algorithum extends Applet implements ActionListener {
                 // eg: g.drawString("Hello World", currCanvasX/2, 40);
 
                 g.setColor(Color.red);
-                g.fillRect(0,0,currCanvasX,currCanvasY);
+                g.fillRect(0, 0, currCanvasX, currCanvasY);
+                g.setColor(Color.LIGHT_GRAY);
+                g.fillRect(45, 55, 100, 100);
+                g.drawLine(145, 55, 195, 100);
+                g.drawLine(145,154,195,120);
+                g.setColor(Color.black);
+                g.fillRect(195,100,5,20);
+                g.drawString("Balance: " + balance,205,115);
+                g.fillRect(45,320,100,25);
                 break;
         }
     }

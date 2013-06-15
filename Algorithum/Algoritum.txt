@@ -1,0 +1,10 @@
+
+Button Pressed:
+ - Take price from current balance
+ - If current balance = 0 and option has been selected (button pressed) dispense item
+ - Else wait for next action
+
+Coin inserted
+ - Add value of coin to current balance
+ - If current balance = 0 and option has been selected (button pressed) dispense item
+ - Else wait for next action
