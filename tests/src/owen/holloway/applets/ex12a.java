@@ -8,15 +8,15 @@ import java.awt.event.ActionListener;
 public class ex12a extends Applet implements ActionListener
 {
 	double number1, number2, answer; //Added the ability to use reals, because ints are a bit restrictive.
-	
+
 	int canvasX, canvasY;
-	Label prompt1, prompt2, prompt3, prompt4; 
+	Label prompt1, prompt2, prompt3, prompt4;
 	TextField value1, value2;
-	Button add, sub, div, mul, exp;
-	
+	Button add, sub, div, mul;
+
 	public void init()
 	{
-		showStatus("init");
+		//showStatus("init");
 		System.out.println("init");
 		
 		canvasX = getWidth()/2;
@@ -87,7 +87,7 @@ public class ex12a extends Applet implements ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		showStatus("ButtonPress");
+		//showStatus("ButtonPress");
 		System.out.println("ButtonPress");
 		number1 = Double.valueOf(value1.getText()).doubleValue();
 		number2 = Double.valueOf(value2.getText()).doubleValue();
@@ -100,9 +100,9 @@ public class ex12a extends Applet implements ActionListener
 
 	public void paint(Graphics g)
 	{
-		showStatus("Paint");
+		//showStatus("Paint");
 		System.out.println("Paint");
 		g.drawString("Answer: " + answer,canvasX - 95 ,canvasY + 70);
-		showStatus("Ready");
+		//showStatus("Ready");
 	}
 }
