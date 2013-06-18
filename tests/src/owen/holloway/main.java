@@ -56,47 +56,47 @@ public class main {
                 break;
 
             case 7:
-                //m.ex8();
+                m.ex8();
                 break;
 
             case 8:
-                //m.ex9();
+                m.ex9();
                 break;
 
             case 9:
-                //m.ex10();
+                m.ex10();
                 break;
 
             case 10:
-                //m.ex10a();
+                m.ex10a();
                 break;
 
             case 11:
-                //m.ex11();
+                m.ex11();
                 break;
 
             case 12:
-                //m.ex11a();
+                m.ex11a();
                 break;
 
             case 13:
-                //m.ex11b();
+                m.ex11b();
                 break;
 
             case 14:
-                //m.ex12();
+                m.ex12();
                 break;
 
             case 15:
-                //m.ex12a();
+                m.ex12a();
                 break;
 
             case 17:
-                //m.ex12b();
+                m.ex12b();
                 break;
 
             case 16:
-                //12a_rewrite
+                m.ex12a_rewrite();
                 break;
 
             case 18:
@@ -252,11 +252,181 @@ public class main {
         applet.init();
     }
 
+    public void ex8() {
+
+        frameApplet = new Frame("ex8");
+
+        ex8 applet = new ex8();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
+    public void ex9() {
+
+        frameApplet = new Frame("ex9");
+
+        ex9 applet = new ex9();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
+    public void ex10() {
+
+        frameApplet = new Frame("ex10");
+
+        ex10 applet = new ex10();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
+    public void ex10a() {
+
+        frameApplet = new Frame("ex10a");
+
+        ex10a applet = new ex10a();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
+    public void ex11() {
+
+        frameApplet = new Frame("ex11");
+
+        ex11 applet = new ex11();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
+    public void ex11a() {
+
+        frameApplet = new Frame("ex11a");
+
+        ex11a applet = new ex11a();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
+    public void ex11b() {
+
+        frameApplet = new Frame("ex11b");
+
+        ex11b applet = new ex11b();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
+    public void ex12() {
+
+        frameApplet = new Frame("ex12");
+
+        ex12 applet = new ex12();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
     public void ex12a() {
 
         frameApplet = new Frame("ex12a");
 
         ex12a applet = new ex12a();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
+    public void ex12a_rewrite() {
+
+        frameApplet = new Frame("ex12a");
+
+        ex12a_rewrite applet = new ex12a_rewrite();
+
+        applet.start();
+
+
+        frameApplet.addWindowListener(new windowMonitor());
+        frameApplet.add(applet);
+        frameApplet.setSize(300, 300);
+        frameApplet.setVisible(true);
+
+        applet.init();
+    }
+
+    public void ex12b() {
+
+        frameApplet = new Frame("ex12a");
+
+        ex12b applet = new ex12b();
 
         applet.start();
 

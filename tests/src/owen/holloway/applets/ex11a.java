@@ -18,7 +18,7 @@ public class ex11a extends Applet implements ActionListener
 	public void init()
 	{
 		
-		showStatus("Setup");
+		//showStatus("Setup");
 		System.out.println("init");
 		
 		randomNo = Math.random();
@@ -60,7 +60,7 @@ public class ex11a extends Applet implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		tries = tries + 1;
-		showStatus("ButtonPress");
+		//showStatus("ButtonPress");
 		System.out.println("ButtonPress");
 		number1 = Integer.valueOf(value1.getText()).intValue();
 		repaint();
@@ -68,7 +68,7 @@ public class ex11a extends Applet implements ActionListener
 	
 	public void paint(Graphics g)
 	{
-		showStatus("Painting");
+		//showStatus("Painting");
 		System.out.println("Painting");
 		
 		canvasX = getWidth();  //Gets the size of the canvas for the end
@@ -136,7 +136,7 @@ public class ex11a extends Applet implements ActionListener
 			
 		}
 		
-		showStatus("Tries So Far: " + tries);
+		//showStatus("Tries So Far: " + tries);
 		System.out.println("Ready");
 	}
 }
