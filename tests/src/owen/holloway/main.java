@@ -20,7 +20,11 @@ public class main {
         m.startup();
 
         while (!nextApplet) {
-            System.out.println("loop");
+            try {
+                Thread.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
         }
 
         //frame.remove(applet);
