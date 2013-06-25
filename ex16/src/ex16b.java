@@ -135,6 +135,7 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
                 g.setColor(color[colorSelected]);
                 g.fillOval(mouseX - (slider/2),mouseY - (slider/2),slider,slider);
                 break;
+
             case 4:
                 slider = 50 - ((mouseY - 150) / 2);
                 g.setColor(color[0]);
@@ -158,7 +159,7 @@ public class ex16b extends Applet implements ActionListener, MouseListener, Mous
                 g.clearRect(10, 150, 11, 120);
                 break;
         }
-            paint(g);
+        paint(g);
     }
 
     public void removeObjects() {

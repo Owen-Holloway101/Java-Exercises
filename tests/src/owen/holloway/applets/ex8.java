@@ -6,9 +6,6 @@ public class ex8 extends Applet
 {
 	public void init()
 	{
-
-		play (getCodeBase(), "gong.au");
-
-
-	}
+		play (getCodeBase(), "owen.holloway.applets/gong.au");
+    }
 }

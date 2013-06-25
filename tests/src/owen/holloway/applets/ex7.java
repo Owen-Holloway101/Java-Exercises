@@ -11,14 +11,14 @@ public class ex7 extends Applet implements ActionListener
 	
 	public void init()
 	{
+        System.out.println("getDocumentsBase: " + getDocumentBase());
 		//Next line gets an image stored in the same directory as the HTML.
 		//These images can be imported or created in Paint Shop Pro.
 		penguin = getImage(getDocumentBase(), "penguin.gif");
 		//picture = getImage(getDocumentBase(), "picture.gif");
-
 		splode = new Button("splode");
 		splode.setBounds(410,190,50,20);
-		splode.setBackground(Color.black);
+		splode.setBackground(Color.red);
 
 		add (splode);
 

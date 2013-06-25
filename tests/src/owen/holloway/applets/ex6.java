@@ -66,7 +66,7 @@ public class ex6 extends Applet implements ActionListener
     	num1 = Integer.parseInt(value1.getText());      //Convert text value1 and value2
     	num2 = Integer.valueOf(value2.getText()).intValue();
     	answer = num1 * num2;			       //Find the sum
-    	showStatus(Integer.toString(answer));	       //Display the sum
+    	//showStatus(Integer.toString(answer));	       //Display the sum
     	repaint();
     }
     

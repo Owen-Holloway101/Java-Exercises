@@ -1,0 +1,94 @@
+//Program to manipulate a balloon in the applet window
+//Taken from Bell & Parr (1999) Java for Students, 2nd ed.  Europe: Prentice Hall.  pp 175-6
+
+import java.awt.*;
+import java.applet.*;
+import java.awt.event.*;
+
+public class PlayBalloon extends Applet implements ActionListener {
+    private Button grow, shrink, left, right,up,down;
+    private Balloon myBalloon;
+
+    public void init() {
+
+        //Adds all the buttons for the applet
+        grow = new Button("Grow");
+        add(grow);
+        grow.addActionListener(this);
+        shrink = new Button("Shrink");
+        add(shrink);
+        shrink.addActionListener(this);
+        left = new Button("Left");
+        add(left);
+        left.addActionListener(this);
+        right = new Button("Right");
+        add(right);
+        right.addActionListener(this);
+        up = new Button("Up");
+        add(up);
+        up.addActionListener(this);
+        down = new Button("Down");
+        add(down);
+        down.addActionListener(this);
+
+        //Sets up the variable for Balloon
+        myBalloon = new Balloon();
+    }
+
+    public void actionPerformed(ActionEvent event) {
+
+        //Actions for when button are press (obviously)
+        if (event.getSource() == grow)
+            myBalloon.grow();                          //Grows balloon
+        if (event.getSource() == shrink)
+            myBalloon.shrink();                        //Shrinks balloon
+        if (event.getSource() == right)
+            myBalloon.right();                         //Moves balloon right
+        if (event.getSource() == left)
+            myBalloon.left();                          //Moves balloon left
+        if (event.getSource() == up)
+            myBalloon.up();                            //Moves balloon up
+        if (event.getSource() == down)
+            myBalloon.down();                          //Moves balloon down
+        repaint();
+    }
+
+    public void paint(Graphics g) {
+        myBalloon.display(g);                         //draws the balloon
+    }
+
+}
+
+
+class Balloon {
+    private int diameter = 10;                         //Sets up the default variables for initial variables
+    private int xCoord = 20, yCoord = 50;
+
+    public void display(Graphics g) {
+        g.drawOval(xCoord, yCoord, diameter, diameter);    //method for drawing balloon
+    }
+
+    public void left() {                                //takes 10 from the x coordinate moving it left
+        xCoord = xCoord - 10;
+    }
+
+    public void right() {                               //add 10 from the x coordinate moving it right
+        xCoord = xCoord + 10;
+    }
+
+    public void up(){                                   //takes 10 from the y coordinate moving it up
+        yCoord = yCoord - 10;
+    }
+
+    public void down(){                                 //takes 10 from the y coordinate moving it down
+        yCoord = yCoord + 10;
+    }
+
+    public void grow() {                                //adds 5 to the diameter of the circle growing it
+        diameter = diameter + 5;
+    }
+
+    public void shrink() {                              //adds 5 to the diameter of the circle growing it
+        diameter = diameter - 5;
+    }
+}
