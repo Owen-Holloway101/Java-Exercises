@@ -6,14 +6,24 @@ import java.applet.*;
 import java.awt.event.*;
 
 public class PlayBalloon extends Applet implements ActionListener {
-    private Button grow, shrink, left, right,up,down;
+    private Button grow, shrink, growAdd, growSub, shrinkAdd, shrinkSub, left, right,up,down;
     private Balloon myBalloon;
 
     public void init() {
+        //Sets up the variable for Balloon
+
+        myBalloon = new Balloon();
 
         //Adds all the buttons for the applet
-        grow = new Button("Grow");
+
+        growAdd = new Button("+");
+        growAdd.addActionListener(this);
+        add(growAdd);
+        grow = new Button("Grow: " + Balloon.growAmount);
         add(grow);
+        growSub = new Button("-");
+        growSub.addActionListener(this);
+        add(growSub);
         grow.addActionListener(this);
         shrink = new Button("Shrink");
         add(shrink);
@@ -30,14 +40,19 @@ public class PlayBalloon extends Applet implements ActionListener {
         down = new Button("Down");
         add(down);
         down.addActionListener(this);
-
-        //Sets up the variable for Balloon
-        myBalloon = new Balloon();
     }
 
     public void actionPerformed(ActionEvent event) {
 
         //Actions for when button are press (obviously)
+        if (event.getSource() == growAdd){
+            Balloon.growAmount = Balloon.growAmount + 1;
+            grow.setLabel("Grow: " + Balloon.growAmount);
+        }
+        if (event.getSource() == growSub){
+            Balloon.growAmount = Balloon.growAmount - 1;
+            grow.setLabel("Grow: " + Balloon.growAmount);
+        }
         if (event.getSource() == grow)
             myBalloon.grow();                          //Grows balloon
         if (event.getSource() == shrink)
@@ -64,6 +79,8 @@ class Balloon {
     private int diameter = 10;                         //Sets up the default variables for initial variables
     private int xCoord = 20, yCoord = 50;
 
+    public static int growAmount = 5, shrinkAmount = 5;
+
     public void display(Graphics g) {
         g.drawOval(xCoord, yCoord, diameter, diameter);    //method for drawing balloon
     }
@@ -85,10 +102,10 @@ class Balloon {
     }
 
     public void grow() {                                //adds 5 to the diameter of the circle growing it
-        diameter = diameter + 5;
+        diameter = diameter + growAmount;
     }
 
     public void shrink() {                              //adds 5 to the diameter of the circle growing it
-        diameter = diameter - 5;
+        diameter = diameter - growAmount;
     }
 }
