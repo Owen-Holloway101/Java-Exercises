@@ -1,5 +1,5 @@
 //Owen Holloway GYC
-//Uses UI scaler template version 1.3
+//Uses UI scaler template version 2.1
 
 import java.applet.Applet;
 import java.awt.*;
@@ -12,6 +12,10 @@ public class UIScaler extends Applet implements ActionListener {
     int canvasX, canvasY, currCanvasX, currCanvasY;
     int UIType;
 
+    //Buttons, TextFields, Labels, etc ....
+    Button test_Button;
+    TextArea test_textArea;
+
     public void init() {
 
         UIType = 1;
@@ -19,8 +23,10 @@ public class UIScaler extends Applet implements ActionListener {
         canvasY = getHeight() + 1;
 
         //Declare and add buttons here
-
-
+        test_Button = new Button("test");
+        add(test_Button);
+        test_textArea = new TextArea();
+        add(test_textArea);
         //############################
 
         UI(); // Object UI elements
@@ -54,11 +60,8 @@ public class UIScaler extends Applet implements ActionListener {
         switch (UIType) //swtich for different UITypes
         {
             case 1:
-                // eg: button = new button("button");
-                // button.setBounds(currCanvasX / 2 - 40, 10, 80, 20);
-                // button.setBackground(Color.green);
-                // button.addActionListener(this);
-                // add(button);
+                test_Button.setBounds(10,10,currCanvasX - 20,20);
+                test_textArea.setBounds(10,30,currCanvasX - 20, currCanvasY - 40);
                 break;
         }
     }
