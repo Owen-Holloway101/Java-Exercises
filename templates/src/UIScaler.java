@@ -18,6 +18,11 @@ public class UIScaler extends Applet implements ActionListener {
         canvasX = getWidth() + 1;
         canvasY = getHeight() + 1;
 
+        //Declare and add buttons here
+
+
+        //############################
+
         UI(); // Object UI elements
 
         setLayout(null);
@@ -29,7 +34,6 @@ public class UIScaler extends Applet implements ActionListener {
         currCanvasY = getHeight();
 
         if (!(canvasX == currCanvasX) | !(canvasY == currCanvasY)) {
-            removeObjects();
             UI(); // Object UI elements
 
             canvasX = currCanvasX;
@@ -76,10 +80,4 @@ public class UIScaler extends Applet implements ActionListener {
         g.clearRect(0, 0, currCanvasX, currCanvasY);
         paint(g);
     }
-
-    public void removeObjects() {
-        // TODO remove all objects
-        // eg: remove(objectName);
-    }
-
 }

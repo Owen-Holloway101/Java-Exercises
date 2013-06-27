@@ -24,9 +24,15 @@ public class PlayBalloon extends Applet implements ActionListener {
         growSub = new Button("-");
         growSub.addActionListener(this);
         add(growSub);
+        shrinkAdd = new Button("+");
+        shrinkAdd.addActionListener(this);
+        add(shrinkAdd);
         grow.addActionListener(this);
-        shrink = new Button("Shrink");
+        shrink = new Button("Shrink: " + Balloon.shrinkAmount);
         add(shrink);
+        shrinkSub = new Button("-");
+        shrinkSub.addActionListener(this);
+        add(shrinkSub);
         shrink.addActionListener(this);
         left = new Button("Left");
         add(left);
@@ -52,6 +58,14 @@ public class PlayBalloon extends Applet implements ActionListener {
         if (event.getSource() == growSub){
             Balloon.growAmount = Balloon.growAmount - 1;
             grow.setLabel("Grow: " + Balloon.growAmount);
+        }
+        if (event.getSource() == shrinkAdd){
+            Balloon.shrinkAmount = Balloon.shrinkAmount + 1;
+            shrink.setLabel("Shrink: " + Balloon.shrinkAmount);
+        }
+        if (event.getSource() == shrinkSub){
+            Balloon.shrinkAmount = Balloon.shrinkAmount - 1;
+            shrink.setLabel("Shrink: " + Balloon.shrinkAmount);
         }
         if (event.getSource() == grow)
             myBalloon.grow();                          //Grows balloon
