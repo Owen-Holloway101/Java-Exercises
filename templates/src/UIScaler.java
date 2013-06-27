@@ -1,5 +1,5 @@
 //Owen Holloway GYC
-//Uses UI scaler template version 1.3
+//Uses UI scaler template version 2.1
 
 import java.applet.Applet;
 import java.awt.*;
@@ -12,11 +12,18 @@ public class UIScaler extends Applet implements ActionListener {
     int canvasX, canvasY, currCanvasX, currCanvasY;
     int UIType;
 
+    //Buttons, TextFields, Labels, etc ....
+;
+
     public void init() {
 
         UIType = 1;
         canvasX = getWidth() + 1;
         canvasY = getHeight() + 1;
+
+        //Declare and add buttons here
+
+        //############################
 
         UI(); // Object UI elements
 
@@ -29,7 +36,6 @@ public class UIScaler extends Applet implements ActionListener {
         currCanvasY = getHeight();
 
         if (!(canvasX == currCanvasX) | !(canvasY == currCanvasY)) {
-            removeObjects();
             UI(); // Object UI elements
 
             canvasX = currCanvasX;
@@ -50,11 +56,7 @@ public class UIScaler extends Applet implements ActionListener {
         switch (UIType) //swtich for different UITypes
         {
             case 1:
-                // eg: button = new button("button");
-                // button.setBounds(currCanvasX / 2 - 40, 10, 80, 20);
-                // button.setBackground(Color.green);
-                // button.addActionListener(this);
-                // add(button);
+
                 break;
         }
     }
@@ -76,10 +78,4 @@ public class UIScaler extends Applet implements ActionListener {
         g.clearRect(0, 0, currCanvasX, currCanvasY);
         paint(g);
     }
-
-    public void removeObjects() {
-        // TODO remove all objects
-        // eg: remove(objectName);
-    }
-
 }
