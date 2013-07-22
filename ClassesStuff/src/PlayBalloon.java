@@ -1,6 +1,8 @@
 //Program to manipulate a balloon in the applet window
 //Taken from Bell & Parr (1999) Java for Students, 2nd ed.  Europe: Prentice Hall.  pp 175-6
 
+//Edited by Owen Holloway GYC
+
 import java.awt.*;
 import java.applet.*;
 import java.awt.event.*;
