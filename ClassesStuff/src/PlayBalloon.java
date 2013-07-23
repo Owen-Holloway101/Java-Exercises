@@ -8,11 +8,17 @@ import java.applet.*;
 import java.awt.event.*;
 
 public class PlayBalloon extends Applet implements ActionListener {
+
     private Button grow, shrink, growAdd, growSub, shrinkAdd, shrinkSub, left, right,up,down;
     private Balloon myBalloon;
 
+    public static int xCord, yCord;
+
     public void init() {
         //Sets up the variable for Balloon
+
+        this.xCord = (getWidth() / 2);
+        this.yCord = (getHeight() / 2) - 20;
 
         myBalloon = new Balloon();
 
@@ -93,12 +99,13 @@ public class PlayBalloon extends Applet implements ActionListener {
 
 class Balloon {
     private int diameter = 10;                         //Sets up the default variables for initial variables
-    private int xCoord = 20, yCoord = 50;
+    private int xCoord = PlayBalloon.xCord, yCoord = PlayBalloon.yCord;
 
     public static int growAmount = 5, shrinkAmount = 5;
 
     public void display(Graphics g) {
-        g.drawOval(xCoord, yCoord, diameter, diameter);    //method for drawing balloon
+        g.setColor(Color.GREEN);
+        g.fillOval(xCoord - (diameter/2), yCoord - (diameter/2), diameter, diameter);    //method for drawing balloon
     }
 
     public void left() {                                //takes 10 from the x coordinate moving it left
@@ -117,11 +124,14 @@ class Balloon {
         yCoord = yCoord + 10;
     }
 
-    public void grow() {                                //adds 5 to the diameter of the circle growing it
+    public void grow() {
+
+        0
+
         diameter = diameter + growAmount;
     }
 
-    public void shrink() {                              //adds 5 to the diameter of the circle growing it
+    public void shrink() {
         diameter = diameter - growAmount;
     }
 }

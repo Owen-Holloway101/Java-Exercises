@@ -5,7 +5,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 import java.awt.Window;
-import java.awt.event.*;
 
 public class windowMonitor extends WindowAdapter implements WindowListener {
 
